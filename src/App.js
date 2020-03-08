@@ -15,53 +15,42 @@ function App() {
   const webcamRef = React.useRef(null);
   const [imageSource, setSource] = useState("");
 
-  const b64toBlob = (b64DataStr, contentType = '', sliceSize = 512) => {
-    const byteCharacters = atob(b64DataStr);
-    const byteArrays = [];
-  
-    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-      const slice = byteCharacters.slice(offset, offset + sliceSize);
-  
-      const byteNumbers = new Array(slice.length);
-      for (let i = 0; i < slice.length; i++) {
-        byteNumbers[i] = slice.charCodeAt(i);
-      }
-  
-      const byteArray = new Uint8Array(byteNumbers);
-      byteArrays.push(byteArray);
-    }
-  
-    const blob = new Blob(byteArrays, { type: contentType });
-    return blob;
-  };
- 
   const capture = React.useCallback(
     () => {
       let imageSrc = webcamRef.current.getScreenshot();
+      let link = '';
       setSource(imageSrc);
-      // imageSrc=imageSrc.substring(23,imageSrc.length);
-      // imageSrc=btoa(imageSrc);
-      // imageSrc=atob(imageSrc);
+      imageSrc=imageSrc.substring(23);
       console.log(imageSrc);
-      const byteNumbers = new Array(imageSrc.length);
-      for (let i = 0; i < imageSrc.length; i++) {
-          byteNumbers[i] = imageSrc.charCodeAt(i);
-      }
-      const byteArray = new Uint8Array(byteNumbers);
-      const blob = new Blob([byteArray], {type:'text/plain'});
-      const blobUrl = URL.createObjectURL(blob, {type:'text/plain'});
-      console.log(blobUrl);
-      // let config = {
-      //   headers: {
-      //     'Content-Type': 'application/octet-stream',
-      //     'Ocp-Apim-Subscription-Key': '4f727d906b284939be579c04f8e108c6'
-      //   }
+      Axios.post("https://api.imgur.com/3/upload", {
+        'image' : imageSrc
+      },
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': 'Client-ID 641970866dba431',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+          'Access-Control-Allow-Methods': 'GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS'
+        }
+      })
+      .then(res => {
+        link = res.link;
+        console.log(link);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+      // const headers = {
+      //   'Content-Type': 'application/octet-stream',
+      //   'Ocp-Apim-Subscription-Key': '4cda043ef62648b3b2b1f40e54236f38'
       // }
-      // Axios.post("https://imagekk.cognitiveservices.azure.com/vision/v1.0/describe", {
-      //   imageSrc
-      // }, config)
+      // Axios.post("https://facekk.cognitiveservices.azure.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=emotion&recognitionModel=recognition_01&returnRecognitionModel=false&detectionModel=detection_01", {
+      //   'data': uInt8Array
+      // },{headers: headers})
       // .then(res => {
-      //   console.log(res.data.responses[0].faceAnnotations[0]);
+      //   console.log(res.data);
       // })
       // .catch(err => {
       //   console.log(err);

@@ -66,10 +66,10 @@ const Landing = () => {
                 {getTracks(tracks)}
             </div>
             <div id="games">
-                <BGColorGame />
+                {/* <BGColorGame /> */}
             </div>
             <div>
-                
+
             </div>
         </div>
     )
