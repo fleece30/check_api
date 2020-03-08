@@ -1,7 +1,6 @@
 import React from 'react';
 import './landing.css';
 import Fade from 'react-reveal/Fade';
-import BGColorGame from './bg-color';
 
 const tracks = [
     {
@@ -64,9 +63,6 @@ const Landing = () => {
             <div id="applications">
                 <h2 style={{textAlign: "center"}}>Other Products</h2>
                 {getTracks(tracks)}
-            </div>
-            <div id="games">
-                {/* <BGColorGame /> */}
             </div>
             <div>
 

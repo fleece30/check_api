@@ -10,7 +10,6 @@ const Header = () => {
             <div className="links">
                 <a href="#landing">HOME</a>
                 <a href="#applications">OTHER PRODUCTS</a>
-                <a href="#games">GAMES</a>
                 <a href="#chatbot">CHATBOT</a>
             </div>
         </div>
