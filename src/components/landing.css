@@ -1,0 +1,85 @@
+*{
+    font-family: 'Montserrat';
+}
+
+.landing{
+    text-align: center;
+    height: 97vh;
+}
+
+.landing span{
+    font-size: 50px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#applications{
+    padding-top: 40px;
+}
+
+.card-img-top {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2vh 0 2vh 0;
+}
+
+.card{
+    height: auto;
+}
+
+.contactus .flex-container{
+    position: relative;
+    left: 50%;
+    transform: translateX(-25%);
+    top:5%;
+}
+
+.form-row label{
+    color: #fff;
+    font-weight: 700;
+}
+
+.card-title{
+    border-bottom: 2px solid #f857a8;
+    padding-bottom: 1vh;
+}
+
+.tracksGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 180px;
+    row-gap: 30px;
+    margin-top: 40px;
+    padding: 0 80px;
+    overflow: hidden;
+}
+
+.comingSoon{
+    color: #fd79a8;
+    grid-column: 2 / 4;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 768px){
+    #tracks{
+        padding-left: 25px!important;
+        padding-right: 25px!important;
+    }
+    .tracksGrid{
+        grid-template-columns: 1fr;
+    }
+    .comingSoon{
+        color: #fd79a8;
+        grid-column: 1;
+        font-size: 20px;
+        text-align: center;
+        vertical-align: middle;
+    }
+}

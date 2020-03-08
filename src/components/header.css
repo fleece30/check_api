@@ -1,0 +1,21 @@
+.header{
+    color: black;
+    font-family: 'Montserrat';
+    display: grid;
+    grid-template-columns: 30% 70%;
+    justify-content: space-between;
+    padding: 20px 50px;
+    z-index: 11;
+    font-weight: bold;
+    position: fixed;
+    width: 93%;
+    background-color: white;
+}
+.links{
+    text-align: right;
+}
+a{
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+}
