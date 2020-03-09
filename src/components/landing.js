@@ -7,17 +7,17 @@ const tracks = [
     {
         "img": "https://image.flaticon.com/icons/svg/2142/2142620.svg",
         "title": "Aids for the Visually Challenged",
-        "desc": "Deep space navigation enables missions to precisely target distant solar system bodies and particular sites of interest on them. Navigation takes place in real-time for spacecraft operation and control. It can also be used for creating higher-fidelity reconstructions of a craft’s trajectory for future course corrections, and for scientific and operational purposes. "
+        "desc": "We offer the lowest prices on the largest selection of low vision products for the blind and visually impaired. Our low vision devices include Braille items, canes, calendars, talking watches, computer products, magnifiers, music players/recorders, specialty sunglasses, and much more. MaxiAids has tools for the blind and those with low vision. We have everything you need to help you live a more active, healthy and independent lifestyle."
     },
     {
         "img": "https://image.flaticon.com/icons/svg/1924/1924432.svg",
         "title": "Learning application for Dyslexic people",
-        "desc": "Data can unravel things helping us challenge the our limits everyday. Space science has multitudes of data, be it the syreams of radio signals from the VLA or the stunning full spectral images from the Hubble Space Telescope. Studying, classifying and searching this data efficiently is a herculean task and poses challenges to analysts and scientists across the globe. Automating this collection and analysis could pave the path to numerous discoveries about the intricate workings of our Universe."
+        "desc": "That is an online tool that allows users to create engaging and creative storyboards, for both educational and entertainment purposes. Creating storyboards is great for school projects, and teachers can use this resource for reinforcing ideas to ESL and students with disabilities. The website provides a variety of customizable templates for teachers that are ready to export or present in minutes. Storyboard That also provides an extensive image library and special tools that make the website easy to use, while also being compatible with iPad and Android."
     },
     {
         "img": "https://image.flaticon.com/icons/svg/2040/2040946.svg",
         "title": "Chatbot for counselling",
-        "desc": "NASA landed humans on the moon. NASA is now poised for its next great transformation: the robot revolution. Here on Earth, robots are performing increasingly complex tasks in ever more challenging settings—medical surgery, automated driving, and bomb disposal are just a few examples of the important work of robots."
+        "desc": "According to the World Health Organization (WHO), the array of mental disorders include depression, bipolar affective disorder, schizophrenia and other psychoses, dementia, intellectual disabilities and developmental disorders including autism. In response, technology companies have developed artificial intelligence applications for mobile phones that aim to be the first line of support for mental health patients, yet provide privacy and anonymity. These applications, targeted at individuals, were developed to proactively check on patients, be ready to listen and chat anytime, anywhere, and recommend activities that improve the users’ wellbeing."
     }
 ]
 
