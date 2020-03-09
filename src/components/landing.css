@@ -3,16 +3,64 @@
 }
 
 .landing{
-    text-align: center;
-    height: 97vh;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+.landing::-webkit-scrollbar { width: 0 !important }
+.bg-image {
+    /* The image used */
+    background-image: url("./c2c.jpeg");
+  
+    min-height: 103%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.landing span{
-    font-size: 50px;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+.bg-image img{
+    height: 100%;
 }
+
+.offset{
+    background-color: #5f27cd;
+    position: absolute;
+    filter: brightness(50%);
+    opacity: 0.6;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.landing .heading{
+    text-align: center;
+    font-size: 80px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+
+.landing .typewriter-class{
+    text-align: center;
+    font-size: 40px;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+
+.landing img{
+    filter: brightness(30%);
+    filter: blur(50px);
+}
+
 
 #applications{
     padding-top: 40px;
@@ -47,6 +95,7 @@
 .card-title{
     border-bottom: 2px solid #f857a8;
     padding-bottom: 1vh;
+    font-size: 15px;
 }
 
 .tracksGrid{

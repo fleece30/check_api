@@ -3,3 +3,44 @@
   scroll-behavior: smooth;
   overflow: auto;
 }
+
+
+.chatbot-popup img{
+  z-index: 2;
+  max-width: 60px;
+  max-height: 60px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chatbot-popup img:hover{
+  opacity: 1;
+}
+
+.show{
+  opacity: 1;
+}
+
+.hide{
+  opacity: 0;
+}
+
+.screenshot{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  box-shadow: -8px -8px 20px white, 4px 4px 20px #bdc3c7;
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  outline: none;
+}

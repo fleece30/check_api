@@ -8,14 +8,27 @@
     z-index: 11;
     font-weight: bold;
     position: fixed;
-    width: 93%;
-    background-color: white;
+    width: 95%;
+    filter: brightness(70%);
+    opacity: 0.7;
+    background-color: black;
+    transition: all 0.3s;
 }
 .links{
     text-align: right;
+    filter: brightness(100%)!important;
+    opacity: 1!important;
 }
 a{
     text-decoration: none;
-    color: black;
+    color: white;
     margin: 0 15px;
+    opacity: 1!important;
+    filter: brightness(100%)!important;
+}
+
+.scrolled{
+    opacity: 1;
+    filter: brightness(100%);
+    transition: all 0.3s;
 }

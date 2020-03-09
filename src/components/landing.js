@@ -1,6 +1,7 @@
 import React from 'react';
 import './landing.css';
 import Fade from 'react-reveal/Fade';
+import Typewriter from 'typewriter-effect';
 
 const tracks = [
     {
@@ -15,22 +16,7 @@ const tracks = [
     },
     {
         "img": "https://image.flaticon.com/icons/svg/2040/2040946.svg",
-        "title": "Chatbot for the mentally ill",
-        "desc": "NASA landed humans on the moon. NASA is now poised for its next great transformation: the robot revolution. Here on Earth, robots are performing increasingly complex tasks in ever more challenging settings—medical surgery, automated driving, and bomb disposal are just a few examples of the important work of robots."
-    },
-    {
-        "img": "https://image.flaticon.com/icons/svg/2142/2142620.svg",
-        "title": "Aids for the Visually Challenged",
-        "desc": "Deep space navigation enables missions to precisely target distant solar system bodies and particular sites of interest on them. Navigation takes place in real-time for spacecraft operation and control. It can also be used for creating higher-fidelity reconstructions of a craft’s trajectory for future course corrections, and for scientific and operational purposes. "
-    },
-    {
-        "img": "https://image.flaticon.com/icons/svg/1924/1924432.svg",
-        "title": "Learning application for Dyslexic people",
-        "desc": "Data can unravel things helping us challenge the our limits everyday. Space science has multitudes of data, be it the syreams of radio signals from the VLA or the stunning full spectral images from the Hubble Space Telescope. Studying, classifying and searching this data efficiently is a herculean task and poses challenges to analysts and scientists across the globe. Automating this collection and analysis could pave the path to numerous discoveries about the intricate workings of our Universe."
-    },
-    {
-        "img": "https://image.flaticon.com/icons/svg/2040/2040946.svg",
-        "title": "Chatbot for the mentally ill",
+        "title": "Chatbot for counselling",
         "desc": "NASA landed humans on the moon. NASA is now poised for its next great transformation: the robot revolution. Here on Earth, robots are performing increasingly complex tasks in ever more challenging settings—medical surgery, automated driving, and bomb disposal are just a few examples of the important work of robots."
     }
 ]
@@ -58,14 +44,26 @@ const Landing = () => {
     return(
         <div>
             <div className="landing" id="landing">
-                <span><b>umang</b>.ai</span>
+                <div className="bg-image"><img src={process.env.PUBLIC_URL + '/rain.jpg'} alt=""></img></div>
+                <div className="offset"></div>
+                <span className="heading" style={{marginBottom: "60px"}}><b>umang</b>.ai</span>
+                <br/>
+                
+                <div className="typewriter-class">
+                    Our solutions are
+                    <Typewriter
+                    options={{
+                        strings: ['of the people', 'for the people', 'but', 'by the youth'],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                />
+                </div>
+                
             </div>
-            <div id="applications">
+            <div id="applications" style={{marginBottom: "100px"}}>
                 <h2 style={{textAlign: "center"}}>Other Products</h2>
                 {getTracks(tracks)}
-            </div>
-            <div>
-
             </div>
         </div>
     )
