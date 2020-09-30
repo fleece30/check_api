@@ -23,7 +23,51 @@ function App() {
     open(!isOpen);
   };
 
-  //Write function here
+  const capture = React.useCallback(
+    (emotionData, web) => {
+      let imageSrc = web.getScreenshot();
+      setSource(imageSrc);
+      imageSrc = imageSrc.substring(23);
+      console.log(imageSrc);
+      const uploadTask = Storage.ref(
+        `images/${imageSrc.substring(5, 10)}`
+      ).putString(imageSrc, "base64", { contentType: "image/jpg" });
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {},
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          Storage.ref("images")
+            .child(imageSrc.substring(5, 10))
+            .getDownloadURL()
+            .then((url) => {
+              Axios.post(
+                "https://facekk.cognitiveservices.azure.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=emotion&recognitionModel=recognition_01&returnRecognitionModel=false&detectionModel=detection_01",
+                {
+                  url: url,
+                },
+                {
+                  headers: {
+                    "Content-Type": "application/json",
+                    "Ocp-Apim-Subscription-Key":
+                      "4cda043ef62648b3b2b1f40e54236f38",
+                  },
+                }
+              )
+                .then((res) => {
+                  setData(res.data[0].faceAttributes.emotion);
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            });
+        }
+      );
+    },
+    [webcamRef]
+  );
 
   return (
     <div className="App">
